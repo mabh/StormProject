@@ -58,6 +58,7 @@ public class Util {
 		Client client = new Client(protocol);
 		transport.open();
 		ClusterSummary summary = client.getClusterInfo();
+		socket.close();
 		return summary.get_supervisors_size();
 	}
 
